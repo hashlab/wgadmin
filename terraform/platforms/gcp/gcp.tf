@@ -1,3 +1,16 @@
+terraform {
+  required_version = "~> 0.12.0"
+
+  backend "remote" {
+    hostname         = "app.terraform.io"
+    organization     = "hash"
+
+    workspaces {
+      prefix = "wg-"
+    }
+  }
+}
+
 provider "google" {
   version     = "~> 2.20"
 }
